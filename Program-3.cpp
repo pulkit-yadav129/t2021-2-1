@@ -2,9 +2,19 @@
 
 void generateSeries(int x) {
     for (int i = 1; i <= x; i++) {
-        if (i % 2 != 0) {
-            std::cout << i << " ";
+        std::cout << i << " ";
+        if (i % 2 != 0 && i != x) {
+            std::cout << ", ";
         }
+    }
+    
+    int nextOdd = x % 2 == 0 ? x + 1 : x + 2;
+    while (nextOdd <= x) {
+        std::cout << nextOdd;
+        if (nextOdd + 2 <= x) {
+            std::cout << ", ";
+        }
+        nextOdd += 2;
     }
 }
 
